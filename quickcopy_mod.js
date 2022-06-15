@@ -47,6 +47,7 @@ class QuickCopy {
                 }
                 else {
                     // nothing selected? Maybe call out enemies in area?
+                    window.granite.showMessageInChat("M:" + this.name, "You need to select a system first!");
                 }
             }
             catch(err) {
