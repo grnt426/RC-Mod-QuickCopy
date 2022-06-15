@@ -1,6 +1,6 @@
 class QuickCopy {
     constructor() {
-        this.matcher = /^claim/;
+        this.matcher = /^copy/;
         this.name = "QuickCopy";
     }
 

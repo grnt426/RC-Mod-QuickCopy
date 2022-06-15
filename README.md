@@ -3,7 +3,7 @@ This mod allows you to quickly copy stuff on screen to your clipboard for pastin
 
 # Usage
 ## System Position
-Click on a system so it is full screen. Then, type in `/claim` in chat to have its position copied to your clipboard, like this 
+Click on a system so it is full screen. Then, type in `/copy` in chat to have its position copied to your clipboard, like this 
 
 `system BAMA (237, 120) in Galvanie`
 
