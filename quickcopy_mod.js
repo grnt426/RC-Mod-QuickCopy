@@ -1,6 +1,7 @@
 class QuickCopy {
     constructor() {
         this.matcher = /^claim/;
+        this.name = "QuickCopy";
     }
 
     chatMessage(message) {
@@ -14,7 +15,7 @@ class QuickCopy {
                             preface = "enemy " + preface;
                         }
                         else {
-                            window.granite.debug("That system is owned by your team! " + selected.name);
+                            preface = "friendly owned " + preface;
                         }
                     }
                     else if(selected.status === "inhabited_neutral") {
@@ -22,10 +23,10 @@ class QuickCopy {
                     }
                     else if(selected.status === "inhabited_dominion") {
                         if(selected.owner.faction_id !== window.gamestate.game.player.faction_id) {
-                            preface = "enemy " + preface;
+                            preface = "enemy dominion";
                         }
                         else {
-                            window.granite.debug("That system is owned by your team! " + selected.name);
+                            preface = "friendly owned dominion";
                         }
                     }
 
@@ -37,6 +38,10 @@ class QuickCopy {
                     navigator.clipboard.writeText(content).then(r => {
                         if(r) {
                             window.granite.debug("Failed to write to clipboard: " + r, window.granite.levels.ERROR);
+                            window.granite.showMessageInChat("M:" + this.name, "Error in copying: " + r);
+                        }
+                        else {
+                            window.granite.showMessageInChat("M:" + this.name, "Copied!");
                         }
                     });
                 }
