@@ -34,7 +34,7 @@ class QuickCopy {
                     let x = Math.round(position.x);
                     let y = Math.round(position.y);
                     let sector = window.gamestate.game.galaxy.sectors[selected.sector_id];
-                    let content = `${preface} ${selected.name.toUpperCase()} (${x}, ${y}) in ${sector.name.toUpperCase()}`;
+                    let content = `${preface} ${selected.name.toUpperCase()} (${x}:${y}) in ${sector.name.toUpperCase()}`;
                     navigator.clipboard.writeText(content).then(r => {
                         if(r) {
                             window.granite.debug("Failed to write to clipboard: " + r, window.granite.levels.ERROR);
